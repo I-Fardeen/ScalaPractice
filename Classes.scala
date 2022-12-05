@@ -1,27 +1,26 @@
 object Classes{
     trait Cart:
-        private var total: Int;
-        protected var nitems: Int = -1;
-        def addItem(nitems: Int): Boolean;
-        def getTotal(): Double;
+        var total: Int
+        var nitems: Int
+        def addItem(nitems: Int): Boolean
+        def getTotal(): Double
     class CheckOut extends Cart{
-        def this {
-            nitems = 1;
-        }
+            var total = 0;
+            var nitems = 0;
+            var temp=0;
         override def addItem(nitems: Int): Boolean = {
             if nitems > 0 then
-            nitems += 1;
-            total = total + ntiems;
+            temp = nitems;
+            temp = temp + 1;
+            total = total + nitems
             true
-            else
-            false
         }
         override def getTotal(): Double = {
             println(s"Cart total = ${total}");
             total
         }
     }
-    def main(args: [String]) = {
+    def main(args: Array[String]) = {
         val check = CheckOut();
         val c = check.addItem(5);
         if c then
