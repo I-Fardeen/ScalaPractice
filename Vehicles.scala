@@ -19,6 +19,17 @@ object Vehicles{
         var engtype : String = "None"
         var hpower: Int = 0
         var mileage: Double = 0.0
+        def carSpecsFunction() = {
+                println("Enter the color for your Bugatti Veron")
+                val clr = readLine()
+                if setColor(clr) then
+                println(s"Your cars color is changed to ${showColor()} Successfully")
+                println("Displaying car stats:")
+                println(s"Engine Type: ${showEng()}")
+                println(s"Top Speed: ${getMaxSpeed()}")
+                println(s"Horsepower: ${showHPower()}")
+                println(s"Mileage: ${showMileage()}");
+        }
         def showColor(): String = {
             color //autoreturn in scala
         }
@@ -50,6 +61,17 @@ object Vehicles{
         var engtype : String = "None"
         var hpower: Int = 0
         var mileage: Double = 0.0
+        def carSpecsFunction() = {
+                println("Enter the color for your BMWi8")
+                val clr = readLine()
+                if setColor(clr) then
+                println(s"Your cars color is changed to ${showColor()} Successfully")
+                println("Displaying car stats:")
+                println(s"Engine Type: ${showEng()}")
+                println(s"Top Speed: ${getMaxSpeed()}")
+                println(s"Horsepower: ${showHPower()}")
+                println(s"Mileage: ${showMileage()}");
+        }
         def showColor(): String = {
             color
         }
@@ -74,6 +96,7 @@ object Vehicles{
             mileage
         }
     }
+    
 
     def main(args: Array[String]) = {
         
@@ -83,26 +106,10 @@ object Vehicles{
         println("Select Car Type (BugattiVeron or BMWi8?) type 1 or 2")
         var i = readLine()
         if i == "1" then 
-                println("Enter the color for your Bugatti Veron")
-                val clr = readLine()
-                if mybug.setColor(clr) then
-                println(s"Your cars color is changed to ${mybug.showColor()} Successfully")
-                println("Displaying car stats:")
-                println(s"Engine Type: ${mybug.showEng()}")
-                println(s"Top Speed: ${mybug.getMaxSpeed()}")
-                println(s"Horsepower: ${mybug.showHPower()}")
-                println(s"Mileage: ${mybug.showMileage()}");
+                mybug.carSpecsFunction();
             
         else if i == "2" then
-                println("Enter the color for your BMWi8")
-                val clr = readLine()
-                if mybmw.setColor(clr) then
-                println(s"Your cars color is changed to ${mybmw.showColor()} Successfully")
-                println("Displaying car stats:")
-                println(s"Engine Type: ${mybmw.showEng()}")
-                println(s"Top Speed: ${mybmw.getMaxSpeed()}")
-                println(s"Horsepower: ${mybmw.showHPower()}")
-                println(s"Mileage: ${mybmw.showMileage()}");
+                mybmw.carSpecsFunction();
         else
                 println("Please choose one of the correct options!")
     }
